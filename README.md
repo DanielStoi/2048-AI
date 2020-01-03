@@ -5,7 +5,7 @@ dependent on the pygame module
 
 this project is my solo work, without referencing code from any other similar project
 
-# Preformance:
+## Preformance:
 the AI can either see 1,2,3 moves ahead. A tree is contructed and then passed through an evaluation algorithm to deduct the 'optimum' move
 
 by seeing 1 move ahead, ai can generally reach 256,128
