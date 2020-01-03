@@ -12,7 +12,7 @@ the AI can either see 1,2,3 moves ahead. A tree is contructed and then passed th
 
 -by seeing 2 moves ahead, ai can generally reach 1024 50% of the time, and below that for the other turns.
 
--by seeing 3 moves ahead, ai can generally each 2048 20% of the time, and almost allways reaching 1024.
+-by seeing 3 moves ahead, ai can generally reach 2048 20% of the time, and almost allways reaching 1024.
 
 ## Further Improvements:
 -AI can be optimised to potentially see more moves ahead via optimising the possibility tree to remove redundances, or to prematurly prune subtrees that are unlikely to lead to good results.
