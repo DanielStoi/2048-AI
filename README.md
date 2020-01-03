@@ -15,6 +15,6 @@ the AI can either see 1,2,3 moves ahead. A tree is contructed and then passed th
 -by seeing 3 moves ahead, ai can generally reach 2048 20% of the time, and almost allways reaching 1024.
 
 ## Further Improvements:
--AI can be optimised to potentially see more moves ahead via optimising the possibility tree to remove redundances, or to prematurly prune subtrees that are unlikely to lead to good results.
+-AI can be optimised to potentially see more moves ahead via reducing the possibility tree via remove redundances, or to prematurly prune subtrees that are unlikely to lead to good results.
 
 -the evaluation algorithm can be further improved and fine tuned. Polynomial regression can be used to scale the importance of certian observed features within some potential outcome.
