@@ -23,7 +23,7 @@ class GUI2048():
         self.game = game2048.Game()
         display_surface = pygame.display.set_mode((400, 400))
         self.display_surface = display_surface
-        pygame.display.set_caption('2024')
+        pygame.display.set_caption('2048')
         
         self.font = pygame.font.Font('freesansbold.ttf', 32)
         
