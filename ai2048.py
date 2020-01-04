@@ -71,12 +71,12 @@ def e_power_corner(board): #largest peice in corner
     for y in range(4):
         for x in range(4):
             if board[y][x]>val:
-                if not(x*y==0 or y == 4 or x==4):
-                    ans = False
-                else:
+                if x*y==0 or y == 3 or x==3:
                     ans = True
+                else:
+                    ans = False
                 val = board[y][x]
-    return int(ans)
+    return (int(ans),val)
                     
             
 def e_power_corner_stability(board,coord): #given peice is stable in corner
@@ -203,7 +203,7 @@ class Reaction (Tree): # possible tile drops
 
 
 
-def create_tree(o_game, turns_ahead, fct,fct2):
+def create_tree(o_game, turns_ahead, fct,fct2,ignore_4 = 2):
     game = Game()
     game.board = copy_board(o_game.board)
     tree = Decision(game, [])
@@ -221,20 +221,20 @@ def create_tree(o_game, turns_ahead, fct,fct2):
             #print("appending to tree",tree)
             tree.add(subtree)
             
-            ast = count_zeros(g.board)*2
+            ast = count_zeros(g.board)
             #print("stage2")
             
-            for k in range(ast):
+            for k in range(ast*ignore_4):
                 
                 tg = Game()
                 tg.board = copy_board(g.board)
-                tg.spawn_tile(k%(ast//2),((k//(ast//2))*2+2),True)
+                tg.spawn_tile(k%(ast),((k//(ast))*2+2),True)
                 #print("appending to tree",subtree)
                 if turns_ahead>1:
-                    subtree.add(create_tree(tg,turns_ahead-1,fct,fct2))
+                    subtree.add(create_tree(tg,turns_ahead-1,fct,fct2,ignore_4))
     return tree
-def find_move(game,m, fct, fct2):
-    tree = create_tree(game,m,basic_fct,basic_fct2)
+def find_move(game,m, fct, fct2,ignore_4=2):
+    tree = create_tree(game,m,basic_fct,basic_fct2,ignore_4)
     return tree.deduct()
     
 
@@ -243,3 +243,45 @@ if __name__ == '__main__':
     game.board=[[0,2,0,8],[0,0,0,4],[0,0,0,2],[0,0,0,0]]
     tree = create_tree(game,1,basic_fct,basic_fct2)
     game.pb()
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

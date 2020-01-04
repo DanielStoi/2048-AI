@@ -1,6 +1,7 @@
 import pygame
 import game2048
 import ai2048 as ai
+from time import sleep
 def color_of_tile(a):
     k={'0':(188, 183, 180),'2':(255, 255, 204),'4':(255, 204, 255),'8':(255, 153, 102),'16':(255, 102, 0),'32':(225,75,75),'64':(255, 0, 0),'128':(255, 255, 150),'256':(255,255,100),'512':(255,255,75),'1024':(255,255,75),'2048':(255,255,0)}
     if a in k:
@@ -48,7 +49,7 @@ class GUI2048():
         
         
     def update_display(self):
-      
+        
         self.display_surface.fill((167, 172, 145))
         for y in range(4):
             for x in range(4):
@@ -75,8 +76,8 @@ class GUI2048():
                 # quit the program. 
                 quit() 
       
-            # Draws the surface object to the screen.   
-            pygame.display.update()
+            # Draws the surface object to the screen.
+        pygame.display.update()
 
     def run_using_fct(self,fct):
         self.game.spawn_tile()
@@ -87,7 +88,10 @@ class GUI2048():
             if k != -1:
                 if self.game.move(k):
                     self.game.spawn_tile()
-            self.update_display()
+                self.update_display()
+            if k == 0:
+                print("score: ", ai.score(self.game.board))
+                break
 
 if __name__ == '__main__':
     print("RUNNING GUI")
