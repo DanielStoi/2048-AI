@@ -6,6 +6,13 @@ dependent on the pygame module.
 this project is my solo work, without referencing code from any other similar project.
 
 ## Preformance:
+#### Version 2:
+-by seeing 2 moves ahead, AI is almost allways able to reach 1024
+-advanced AI dynamically ajusts the amount of moves it can see ahead, from 2-4, allowing it to reach 2048 25% of the time
+
+
+
+#### Version 1:
 the AI can either see 1,2,3 moves ahead. A tree is contructed and then passed through an evaluation algorithm to deduct the apparant value of potential positions.
 
 -by seeing 1 move ahead, ai can generally reach 256,128.
