@@ -14,7 +14,7 @@ this project is my solo work, without referencing code from any other similar pr
 
 
 #### Version 1:
-the AI can either see 1,2,3 moves ahead. A tree is contructed and then passed through an evaluation algorithm to deduct the apparant value of potential positions.
+the AI can either see 1,2,3 moves ahead. A tree is constructed and then passed through an evaluation algorithm to deduct the apparant value of potential positions.
 
 -by seeing 1 move ahead, ai can generally reach 256,128.
 
