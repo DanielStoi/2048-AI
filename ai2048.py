@@ -41,6 +41,12 @@ def count_zeros (a):
             if square == 0:
                 ans+=1
     return ans
+
+def unique_identifier (board):
+    ans = 0
+    for i in range(16):
+        ans+=board[i//4][i%4]*(3**i)
+    return ans
     
 
 
@@ -95,7 +101,20 @@ def score(board):
                 ans+= int(log(square,2)-1)*square
     return ans
 
-
+def entrapment(board,coord):
+    next_to = []
+    x = coord[0]
+    y = coord[1]
+    if x>0:
+        next_to.append(board[y][x-1])
+    if x<3:
+        next_to.append(board[y][x+1])
+    if y>0:
+        next_to.append(board[y-1][x])
+    if y<3:
+        next_to.append(board[y+1][x])
+    return int(sum(next_to)//board[y][x])
+        
 
 
 #############################
@@ -174,7 +193,6 @@ class Decision (Tree): #possible player moves
         assert (self.val is not None)
             
         return self.val
-    
 
 
 class Reaction (Tree): # possible tile drops
@@ -203,18 +221,16 @@ class Reaction (Tree): # possible tile drops
 
 
 
-def create_tree(o_game, turns_ahead, fct,fct2,ignore_4 = 2):
+def create_tree(o_game, turns_ahead, fct,fct2,ignore_4 = 2,end_it=False):
     game = Game()
     game.board = copy_board(o_game.board)
     tree = Decision(game, [])
     assert(not tree.subtrees)
     
     for move in range(1,5):
-        #print("move", move)
         g = Game()
         g.board = copy_board(game.board)
         g.move(move)
-        #g.pb()
         if g.board != game.board:
             tree.moves.append(move)
             subtree = Reaction(g,None,fct,fct2)
@@ -223,7 +239,12 @@ def create_tree(o_game, turns_ahead, fct,fct2,ignore_4 = 2):
             
             ast = count_zeros(g.board)
             #print("stage2")
-            
+            if ast>7:
+                turns_ahead-=1
+            if ast<3 and turns_ahead==3 and not end_it:
+                print("REEEEEEEEEEET")
+                turns_ahead+=1
+                end_it=True
             for k in range(ast*ignore_4):
                 
                 tg = Game()
@@ -231,7 +252,9 @@ def create_tree(o_game, turns_ahead, fct,fct2,ignore_4 = 2):
                 tg.spawn_tile(k%(ast),((k//(ast))*2+2),True)
                 #print("appending to tree",subtree)
                 if turns_ahead>1:
-                    subtree.add(create_tree(tg,turns_ahead-1,fct,fct2,ignore_4))
+                    
+                    subtree.add(create_tree(tg,turns_ahead-1,fct,fct2,ignore_4,end_it))
+                        
     return tree
 def find_move(game,m, fct, fct2,ignore_4=2):
     tree = create_tree(game,m,basic_fct,basic_fct2,ignore_4)
@@ -243,39 +266,6 @@ if __name__ == '__main__':
     game.board=[[0,2,0,8],[0,0,0,4],[0,0,0,2],[0,0,0,0]]
     tree = create_tree(game,1,basic_fct,basic_fct2)
     game.pb()
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
