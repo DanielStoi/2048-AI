@@ -84,11 +84,12 @@ class GUI2048():
         self.game.spawn_tile()
         cont = True
         while cont:
+            self.update_display()
             k = fct()
             if k != -1:
                 if self.game.move(k):
                     self.game.spawn_tile()
-                self.update_display()
+                
             if k == 0:
                 print("score: ", ai.score(self.game.board))
                 break
