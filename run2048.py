@@ -24,7 +24,7 @@ while True:
 if ans>1:
     print("----------------------------")
     print('you have chosen an option that utilizes AI.\n How advanced to you want the AI to be:')
-    print('1 : basic \n2: good \n3: advanced (takes around 7 seconds to make a move)')
+    print('1 : basic \n2: good \n3: advanced')
 
 while ans>1:
     m = input("input: ")
