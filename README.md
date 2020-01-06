@@ -8,6 +8,7 @@ this project is my solo work, without referencing code from any other similar pr
 ## Preformance:
 #### Version 2:
 -by seeing 2 moves ahead, AI is almost allways able to reach 1024
+
 -advanced AI dynamically ajusts the amount of moves it can see ahead, from 2-4, allowing it to reach 2048 25% of the time
 
 
