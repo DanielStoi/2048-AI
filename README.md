@@ -6,7 +6,7 @@ dependent on the pygame module.
 this project is my solo work, without referencing code from any other similar project.
 
 ## Preformance:
-#### Version 2:
+#### Version 3 (in process):
 - hard coded algorithm has similar performance to version 2
 -this version has an addition machine learning classifier that uses supervised learning (particularly the stimulated annealing algorithm) to train a learning algorithm (in progress)
 
