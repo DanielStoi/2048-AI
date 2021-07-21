@@ -1,7 +1,9 @@
 # 2048-AI
-an AI that plays 2048.
+an AI that plays 2048. 
 
-dependent on the pygame module.
+User can control the "strength" of the AI.
+
+This project includes a replica of the 2048 game include a GUI dependent on the pygame module.
 
 this project is my solo work, without referencing code from any other similar project.
 
