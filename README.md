@@ -8,6 +8,7 @@ this project is my solo work, without referencing code from any other similar pr
 ## Preformance:
 #### Version 3 (in progress):
 - hard coded algorithm has similar performance to version 2
+
 -this version has an addition machine learning classifier that uses supervised learning (particularly the stimulated annealing algorithm) to train a learning algorithm (in progress)
 
 
