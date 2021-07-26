@@ -10,13 +10,14 @@ this project is my solo work, without referencing code from any other similar pr
 ## Preformance:
 #### Version 3:
 
-- this version has an addition machine learning classifier that uses supervised learning (particularly the stimulated annealing algorithm) to train a learning algorithm. 
+- this version has an additional machine learning classifier that uses supervised learning (particularly the simulated annealing algorithm) to train a learning algorithm. 
 
-- by using the AI classifier on maximum strength, the AI is able to reach 2048 around 70% of the time with just 30 minutes of training
+- by using the AI classifier on level 3, the AI is able to reach 2048 around 70% of the time. This is with just 30 minutes of training and almost instant execution.
 
 - hard coded algorithm has similar performance to version 2, reaching 2048 around 20% of the time.
 
 - the machine learning algorithm only controls 10 weights, so there is a natural limit to how well it can perform. Optimising the constraints in itself is also a problem. 
+
 
 
 #### Version 2:
