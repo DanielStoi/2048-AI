@@ -3,21 +3,26 @@ an AI that plays 2048.
 
 User can control the "strength" of the AI.
 
-This project includes a replica of the 2048 game include a GUI dependent on the pygame module.
+This project includes a replica of the 2048 game include a GUI dependent on the pygame module. Run "run2048.py" to execute code, and "stimulated_annealing_algorithm.py" to train a classifier
 
 this project is my solo work, without referencing code from any other similar project.
 
 ## Preformance:
-#### Version 3 (in progress):
-- hard coded algorithm has similar performance to version 2
+#### Version 3:
 
-- this version has an addition machine learning classifier that uses supervised learning (particularly the stimulated annealing algorithm) to train a learning algorithm (in progress)
+- this version has an addition machine learning classifier that uses supervised learning (particularly the stimulated annealing algorithm) to train a learning algorithm. 
+
+- by using the AI classifier on maximum strength, the AI is able to reach 2048 around 70% of the time with just 30 minutes of training
+
+- hard coded algorithm has similar performance to version 2, reaching 2048 around 20% of the time.
+
+- the machine learning algorithm only controls 10 weights, so there is a natural limit to how well it can perform. Optimising the constraints in itself is also a problem. 
 
 
 #### Version 2:
 - by seeing 2 moves ahead, AI is almost allways able to reach 1024
 
-- advanced AI dynamically ajusts the amount of moves it can see ahead, from 2-4, allowing it to reach 2048 25% of the time
+- advanced AI dynamically ajusts the amount of moves it can see ahead, from 2-4, allowing it to reach 2048 20% of the time
 
 
 
