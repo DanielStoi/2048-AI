@@ -10,12 +10,12 @@ currently, the preformance of the ai's are at:
 
 print("This is the option menu of 2048.")
 print("make sure pygame is installed")
-print("Choose your game mode from:\n1: classic 2048\n2: classic 2048 with AI move reccomendations\n3: AI plays 2048")
+print("Choose your game mode from:\n1: classic 2048\n2: classic 2048 with AI move reccomendations\n3: AI plays 2048\n4: AI plays 2048 with inputed classifier")
 while True:
     ans = input("input: ")
     try:
         ans = int(ans)
-        if 4>ans>0:
+        if 5>ans>0:
             break
         print('input is not a valid choice')
     except:
@@ -61,14 +61,22 @@ if ans == 2:
             game.game.spawn_tile()
         game.update_display()
             
-else:
+elif ans == 3:
     def computer_move():
         k = ai.find_move(game.game,m,fct,fct2,2-(m//3))
+        #game: game, m:moves ahead, fct: eval_funt, fct2: board_funct
         return k
     game.run_using_fct(computer_move)
-        
-    
 
-    
+elif ans == 4:
+    weights = list(map(int,input("enter the 10 weights seperated by spaces: ").split()))
+    from classifier_builder import classifier
+    alg = classifier(weights)
+
+    def computer_move():
+        k = ai.find_move(game.game,m,alg.function,fct2,2-(m//3))
+        #game: game, m:moves ahead, fct: eval_funt, fct2: board_funct
+        return k
+    game.run_using_fct(computer_move)
     
         
