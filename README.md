@@ -8,7 +8,7 @@ This project includes a replica of the 2048 game include a GUI dependent on the 
 this project is my solo work, without referencing code from any other similar project.
 
 ## Preformance:
-#### Version 3:
+#### Version 3 (2021):
 
 - this version has an additional machine learning classifier that uses supervised learning (particularly the simulated annealing algorithm) to train a learning algorithm. 
 
@@ -20,14 +20,14 @@ this project is my solo work, without referencing code from any other similar pr
 
 
 
-#### Version 2:
+#### Version 2 (2020):
 - by seeing 2 moves ahead, AI is almost allways able to reach 1024
 
 - advanced AI dynamically ajusts the amount of moves it can see ahead, from 2-4, allowing it to reach 2048 20% of the time
 
 
 
-#### Version 1:
+#### Version 1 (2020):
 the AI can either see 1,2,3 moves ahead. A tree is constructed and then passed through an evaluation algorithm to deduct the apparant value of potential positions.
 
 - by seeing 1 move ahead, ai can generally reach 256,128.
