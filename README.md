@@ -20,6 +20,8 @@ this project is my solo work, without referencing code from any other similar pr
 
 - the machine learning algorithm only controls 10 weights, so there is a natural limit to how well it can perform. Optimising the constraints in itself is also a problem. 
 
+- try weights 93 200 -102 -190 -14 110 -39 146 29 118 for a good performance
+
 
 
 #### Version 2 (2020):
