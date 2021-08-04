@@ -1,4 +1,6 @@
 # 2048-AI
+![game](https://github.com/DanielStoi/2048-AI/blob/master/ai2048.PNG)
+
 an AI that plays 2048. 
 
 User can control the "strength" of the AI.
